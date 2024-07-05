@@ -8,3 +8,5 @@ class Evento(models.Model):
     data_evento = models.DateTimeField()
     data_criacao= models.DateTimeField(auto_now=True)
     
+    class Meta:
+        db_table = 'evento'
