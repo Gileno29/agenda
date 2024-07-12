@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "model-page.html" %}
 
 
-    <h1>Eventos</h1>
 
     
-    {% for evento in eventos %}
+    {% block content %}
+        <h1>Eventos</h1>
+        {% for evento in eventos %}
 
-        <ul>
-            <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
-        </ul>
+            <ul>
+                <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
+            </ul>
 
-    {% endfor %}
-    
-</body>
-</html>
+        {% endfor %}
+    {% endblock %}
