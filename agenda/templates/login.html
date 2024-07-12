@@ -1,0 +1,32 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}"></link>
+</head>
+<body>
+   
+    <div class ="login-container" align="center">
+
+        <h1>Login</h1>
+        <form action="submit" method="post">{% csrf_token %}
+            <label>Usuario</label>
+            <input type="text" name="username">
+            <label>Password</label>
+            <input type="password" name="password">
+            <button type="submit">Entrar</button>
+        </form>
+
+        <div align="center" class="error-message">
+            {% for message in messages %}
+                <strong>Erro! </strong> {{ message }}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,15 +1,17 @@
 {% extends "model-page.html" %}
 
+{% block content %}
+  <h1>Eventos</h1>
 
-
-    
-    {% block content %}
-        <h1>Eventos</h1>
-        {% for evento in eventos %}
-
-            <ul>
-                <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
-            </ul>
-
-        {% endfor %}
-    {% endblock %}
+  {% for evento in eventos %}
+  <div class="evento-container">
+    <div class="evento">
+        <ul>
+            <la>{{ evento.titulo }} - {{ evento.get_data_evento }}</la>
+        </ul>
+        <span class="acoes">
+            <a href="#"><i class="fas fa-edit"></i></a> <a href="#"><i class="fas fa-trash-alt"></i></a> </span>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

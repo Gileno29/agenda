@@ -1,0 +1,36 @@
+/* ... existing styles ... */
+
+.evento-container {
+    width: 20%;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff; /* Add a white background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    min-height: 100vh; /* Make the body take up full viewport height */
+    margin-bottom: 20%;
+  }
+
+.evento {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .acoes {
+    display: flex;
+    justify-content: flex-end; /* Align icons to the right */
+  }
+  
+  .acoes a {
+    margin-left: 10px;
+  }
+  
+  .acoes i {
+    font-size: 16px;
+    color: #007bff; /* Example icon color */
+  }
+  
