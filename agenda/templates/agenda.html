@@ -3,15 +3,43 @@
 {% block content %}
   <h1>Eventos</h1>
 
-  {% for evento in eventos %}
+  
   <div class="evento-container">
-    <div class="evento">
-        <ul>
-            <la>{{ evento.titulo }} - {{ evento.get_data_evento }}</la>
-        </ul>
-        <span class="acoes">
-            <a href="#"><i class="fas fa-edit"></i></a> <a href="#"><i class="fas fa-trash-alt"></i></a> </span>
-    </div>
+
+    <button><a href="evento/"><i class="fa fa-plus" aria-hidden="true"></i></a></button>
+
+        <div class="evento">
+ 
+            <table class="table-class">
+                <thead>
+                    <tr>
+                        <th scope="col">Título</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for evento in eventos %}
+                        <tr>
+                            <td>{{ evento.titulo }}</td>
+                            <td>{{ evento.get_data_evento }}</td>
+                            <td>
+                                <a href="#"><i class="fas fa-edit acoes"></i></a> <a href="#"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+
+        <div align="center" class="error-message">
+            {% for message in messages %}
+                <strong>Erro! </strong> {{ message }}
+            {% endfor %}
+        </div>
   </div>
-  {% endfor %}
+  
 {% endblock %}

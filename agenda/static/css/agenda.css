@@ -1,5 +1,42 @@
 /* ... existing styles ... */
-
+.table-class {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: 100%;
+    border: none;
+    text-align: center;
+  }
+  
+  thead,
+  tfoot {
+    background-color: rgb(228 240 245);
+  }
+  
+  th,
+  td {
+    border: none; /*1px solid rgb(160 160 160);*/
+    padding: 8px 10px;
+  }
+  
+  td:last-of-type {
+    text-align: center;
+  }
+  
+  tbody > tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+  }
+  
+  tfoot th {
+    text-align: right;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+  
 .evento-container {
     width: 20%;
     padding: 30px;
@@ -11,26 +48,13 @@
     justify-content: center; /* Center horizontally */
     min-height: 100vh; /* Make the body take up full viewport height */
     margin-bottom: 20%;
+   
   }
 
-.evento {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  }
+
   
-  .acoes {
-    display: flex;
-    justify-content: flex-end; /* Align icons to the right */
-  }
+
   
-  .acoes a {
-    margin-left: 10px;
-  }
-  
-  .acoes i {
-    font-size: 16px;
-    color: #007bff; /* Example icon color */
-  }
-  
+
+
+ 
