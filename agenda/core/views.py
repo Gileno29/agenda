@@ -44,7 +44,12 @@ def lista_eventos(request):
 
 @login_required(login_url='/login/')
 def evento(request):
-    return render(request,'evento.html')
+    id_envento = request.GET.get('id')
+    dados={}
+
+    if id_envento:
+        dados['evento'] = Evento.objects.get(id=id_envento)
+    return render(request,'evento.html', dados)
 
 
 @login_required(login_url='/login/')
@@ -64,3 +69,12 @@ def submit_evento(request):
 
         return redirect('/')
     return redirect('/')
+
+@login_required(login_url='/login/')
+def delete_evento(request, id_evento):
+    usuario= request.user
+    evento=Evento.objects.get(id=id_evento)
+    if evento.usuario==usuario:
+        evento.delete()
+    return redirect('/')
+
