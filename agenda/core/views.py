@@ -57,13 +57,17 @@ def submit_evento(request):
     print(request)
     if request.POST:
         print("Entrei no metodo post")
+        id= request.POST.get('id')
         titulo= request.POST.get('titulo')
         data_evento = request.POST.get('data_evento')
         descricacao= request.POST.get('descricao')
         usuario= request.user
-        print("DADOS: ", titulo, data_evento,descricacao,usuario)
+        print("DADOS: ", id, titulo, data_evento,descricacao,usuario)
         try:
-            Evento.objects.create(titulo=titulo, data_evento=data_evento,descricao=descricacao, usuario=usuario)
+            if id:
+                 Evento.objects.filter(id=id).update(titulo=titulo, data_evento=data_evento,descricao=descricacao, usuario=usuario)
+            else:
+                Evento.objects.create(titulo=titulo, data_evento=data_evento,descricao=descricacao, usuario=usuario)
         except Exception as e:
             messages.error(request, "Erro ao cadastrar novo evento", e)
 
