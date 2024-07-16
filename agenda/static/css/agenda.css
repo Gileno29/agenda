@@ -12,7 +12,7 @@
   
   thead,
   tfoot {
-    background-color: rgb(228 240 245);
+    background-color: rgb(100, 201, 245);
   }
   
   th,
@@ -26,7 +26,7 @@
   }
   
   tbody > tr:nth-of-type(even) {
-    background-color: rgb(237 238 242);
+    background-color: rgb(101, 247, 133);
   }
   
   tfoot th {
@@ -38,7 +38,7 @@
   }
   
 .evento-container {
-    width: 20%;
+    width: 30%;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -51,8 +51,12 @@
    
   }
 
+  .bt-adicao{
+    margin-bottom: 2%;
+    background-color: rgb(16, 194, 248);
+    
 
-  
+  }
 
   
 
