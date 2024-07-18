@@ -19,4 +19,4 @@ Este é um projeto de agenda simples desenvolvido em Python utilizando o framewo
 
 1. **Clone o repositório:**
    ```bash
-   git clone [URL inválido removido]
+   git [clone [URL inválido removido]](https://github.com/Gileno29/agenda.git)
