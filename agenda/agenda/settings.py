@@ -12,23 +12,35 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+print("Meu Base dir: ", BASE_DIR)
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@jvq7&3r7bnd2u&gsdg=+m0@u9^l9xf=7ygmyj80q%v)@%vh-h'
+#SECRET_KEY = 'django-insecure-@jvq7&3r7bnd2u&gsdg=+m0@u9^l9xf=7ygmyj80q%v)@%vh-h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
+
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = ['*']#os.getenv('ALLOWED_HOSTS').split(',')
+#CSRF_TRUSTED_ORIGINS = ['*']
+
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -116,10 +128,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+
+STATIC_ROOT = '/static/'
+STATIC_URL = '/static/'
+MEDIA_URL='/media/'
+#STATICFILES_DIRS = [
+ #   BASE_DIR / "static",
+#]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
