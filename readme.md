@@ -1,5 +1,5 @@
 
-# 🌐 Django & Next.js Project
+# 🌐 Agenda Django 
 <div align="center">
   <img src="./frontend/public/banner.png" alt="Logo do Projeto" width="200"/>
 </div>
@@ -43,83 +43,52 @@ Este é um projeto full-stack que combina Django para o back-end e Next.js para 
 ## 🧰 Tecnologias Utilizadas
 
 - [Django](https://www.djangoproject.com/) - Back-end framework
-- [Next.js](https://nextjs.org/) - React framework para front-end
-- [PostgreSQL](https://www.postgresql.org/) - Banco de dados
-- [AntDesign](https://ant.design/) - Estilização
+- [Docker](https://www.docker.com/) - Deploy
+- [SQLitle](https://www.sqlite.org/) - Banco de dados
+- [Nginx](https://nginx.org/en/) - Servidor Web
 
 ## ✨ Funcionalidades
 
-- Autenticação de usuários
-- CRUD de novos usuários
-- Interface responsiva e moderna
-- API interna para comunicação com o frontend
+- Inserção de evendos
+- Atualização
+- Remoção
+- Listagem
 
 ## 📋 Requisitos
 
-- Python 3
-- Node.js 14 ou superior
-- PostgreSQL
+- Python 3.10
+- Docker
+- Django
 
 ## 🚀 Instalação
 
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/guedes-jr/django_next_auth.git backend
+git clone https://github.com/Gileno29/agenda
 
-cd backend
+cd agenda
 ```
 
 ### Configurando o Back-end (Django)
 
 ```bash
 # Criar ambiente virtual
-python3 -m venv venv
+python3 -m venv agenda-venv
 
 # Ativar ambiente virtual
-source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+source agenda-venv/bin/activate  # No Windows use `venv\Scripts\activate`
 
 # Instalar dependências necessárias para execução do projeto
 pip install -r requirements.txt
+
+#Rodar a aplicação em modo de desenvolvimento
+
+python manage.py runserver
 ```
 
-### Crie um banco de dados PostgreSQL e configure o usuário e senha no arquivo `settings`
-```bash
-su postgres 
 
-psql
-```
-```sql
-create user django_next with password 'django_next';
-create database django_next owner django_next;
-
-\c django_next
-create extension unaccent;
-create extension pg_trgm; 
-```
----
-> **ERRO:** Caso ocorra erro ao fazer o migrate, verifique o status do seu postgres
-> ```sudo service postgresql status```
-> se estiver `down` use o seguinte comando:
-> ```sudo service postgresql start```
-
-### Criar tabelas no banco de dados e um superusuário
-```bash 
-# Aplicar models e criar as tabelas no banco de dados
-python3 manage.py migrate
-
-# Criar super usuário para ter acesso a aplicação e ao django admin (web)
-python3 manage.py createsuperuser  # Siga as instruções para criar um superusuário
-```
-
-### Configurando o Front-end (Next.js)
-
-```bash
-cd frontend
-npm install
-```
-
-### Executando a Aplicação
+### Executando a Aplicação em produção
 
 **Back-end:**
 
