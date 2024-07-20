@@ -90,94 +90,57 @@ python manage.py runserver
 
 ### Executando a Aplicação em produção
 
-**Back-end:**
-
 ```bash
-cd backend
-source venv/bin/activate  # No Windows use `venv\Scripts\activate`
-python manage.py runserver
+sudo docker-compose up 
+  #execute com a flag -d para executar em segundo plano
+
+
+#Parar aplicação
+
+docker-compose down -v
 ```
-
-**Front-end:**
-
-```bash
-cd frontend
-npm run dev
-```
-
-## 📦 Scripts Disponíveis
-
-Na pasta `frontend`, você pode rodar:
-
-- `npm run dev`: Executa a aplicação em modo de desenvolvimento.
-- `npm run build`: Compila a aplicação para produção.
-- `npm run start`: Inicia o servidor Next.js.
-
-Na pasta `backend`, você pode rodar:
-
-- `python manage.py runserver`: Inicia o servidor Django.
-
 ## 📁 Estrutura de Pastas
 
 ```plaintext
-├── backend
-├── ApiRoot
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── LICENSE
-├── README.md
-├── auth
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-├── frontend
-│   ├── README.md
-│   ├── next.config.mjs
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── postcss.config.mjs
-│   ├── public
-│   │   ├── banner.png
-│   │   ├── next.svg
-│   │   └── vercel.svg
-│   ├── src
-│   │   ├── app
-│   │   │   ├── auth
-│   │   │   │   ├── password
-│   │   │   │   │   ├── reset-password
-│   │   │   │   │   │   └── page.tsx
-│   │   │   │   │   └── reset-password-confirmation
-│   │   │   │   │       └── page.tsx
-│   │   │   │   ├── register
-│   │   │   │   │   └── page.tsx
-│   │   │   │   └── utils.ts
-│   │   │   ├── components
-│   │   │   │   ├── Login.module.css
-│   │   │   │   ├── Login.tsx
-│   │   │   │   ├── Register.tsx
-│   │   │   │   ├── ResetPassword.tsx
-│   │   │   │   └── ResetPasswordConfirmation.tsx
-│   │   │   ├── dashboard
-│   │   │   │   ├── Dashboard.module.css
-│   │   │   │   └── page.tsx
-│   │   │   ├── favicon.ico
-│   │   │   ├── fetcher.ts
-│   │   │   ├── globals.css
-│   │   │   ├── layout.tsx
-│   │   │   └── page.tsx
-│   │   └── middleware.ts
-│   ├── tailwind.config.ts
-│   └── tsconfig.json
-├── manage.py
+├── agenda
+│   ├── agenda
+│   │   ├── asgi.py
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── core
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   ├── db.sqlite3
+│   ├── manage.py
+│   ├── static
+│   │   └── css
+│   │       ├── agenda.css
+│   │       ├── evento.css
+│   │       └── login_style.css
+│   └── templates
+│       ├── agenda.html
+│       ├── evento.html
+│       ├── login.html
+│       ├── model-footer.html
+│       ├── model-header.html
+│       └── model-page.html
+├── db.sqlite3
+├── docker-compose.yml
+├── Dockerfile
+├── entrypoint.sh
+├── nginx
+│   ├── Dockerfile
+│   └── nginx.conf
+├── readme.md
 └── requirements.txt
 ```
-> Comando utilizado para mostrar a estrutura de dados `tree -I 'node_modules' -I '__pycache__' -I 'migrations' -I 'venv'`.
+> Comando utilizado para mostrar a estrutura de dados `tree  -I '__pycache__' -I 'migrations' -I 'agenda_env'`.
 
 ## 🤝 Contribuindo
 
@@ -197,10 +160,9 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 👤 **Seu Nome**
 
-- Github: [@guedes-jr](https://github.com/guedes-jr)
-- LinkedIn: [João Guedes](https://www.linkedin.com/in/jo%C3%A3o-guedes-36a440135)
-- Email: joao.guedes.developer@gmail.com
-
+- Github: [@Gileno29](https://github.com/Gileno29/agenda)
+- LinkedIn: [Gileno Duarte](https://www.linkedin.com/in/gileno-cordeiro-duarte-75913a164/)
+- Email: gilenoduarte.jobs@gmail.com
 ---
 
-Desenvolvido com profissionalismo por [João Guedes](https://github.com/guedes-jr) 🤖.
+Desenvolvido com profissionalismo por [Gileno Duarte](https://github.com/Gileno29/agenda) 🤖.
