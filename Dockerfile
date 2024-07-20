@@ -8,7 +8,6 @@ RUN pip install -r requirements.txt
 
 
 COPY ./agenda .
-
 COPY ./entrypoint.sh /
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]

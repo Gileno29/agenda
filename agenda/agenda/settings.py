@@ -34,7 +34,7 @@ load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG =True #os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*']#os.getenv('ALLOWED_HOSTS').split(',')
 #CSRF_TRUSTED_ORIGINS = ['*']
@@ -129,8 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-STATIC_ROOT = '/static/'
-STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "static/"
+print("Caminho dos arquivos staticos: ", STATIC_ROOT)
+STATIC_URL = 'static/'
 MEDIA_URL='/media/'
 #STATICFILES_DIRS = [
  #   BASE_DIR / "static",
