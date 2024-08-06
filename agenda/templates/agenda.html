@@ -22,12 +22,15 @@
                 </thead>
                 <tbody>
                     {% for evento in eventos %}
-                        <tr>
-                            <td>{{ evento.titulo }}</td>
-                            <td>{{ evento.get_data_evento }}</td>
-                            <td>
-                                <a href="evento/?id={{ evento.id }}"><i class="fas fa-edit acoes"></i></a> <a href="evento/delete/{{ evento.id }}"><i class="fas fa-trash-alt"></i></a>
-                            </td>
+                        <tr {% if evento.get_evento_atrasado %} style="color: crimson; " 
+                        {% endif %}>
+                            
+                                <td>{{ evento.titulo }}</td>
+                                <td>{{ evento.get_data_evento }}</td>
+                                <td>
+                                    <a href="evento/?id={{ evento.id }}"><i class="fas fa-edit acoes"></i></a> <a href="evento/delete/{{ evento.id }}"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                           
                         </tr>
 
                         </tr>
