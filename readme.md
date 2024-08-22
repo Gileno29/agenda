@@ -1,8 +1,5 @@
 
 # 🌐 Agenda Django 
-<div align="center">
-  <img src="./frontend/public/banner.png" alt="Logo do Projeto" width="200"/>
-</div>
 
 <p align="center">
   <a href="https://github.com/Gileno29/agenda">
